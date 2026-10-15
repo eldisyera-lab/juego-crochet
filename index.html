@@ -130,7 +130,7 @@ function pdf(){
   x.fillStyle='#3b2a1a';x.font='40px Georgia,serif';
   x.fillText('por completar los 5 niveles del juego Crochet para Aprender',W/2,805);
   x.fillStyle='#7a6650';x.font='32px Georgia,serif';
-  x.fillText('Insignias: '+L.slice(0,3).map(l=>l.b).join(' · '),W/2,880);x.fillText(L.slice(3).map(l=>l.b).join(' · '),W/2,925);
+  const ft=(t,y,f)=>{do{x.font=f+'px Georgia,serif';f-=2}while(x.measureText(t).width>W-320&&f>16);x.fillText(t,W/2,y)};ft('Insignias: '+L.slice(0,3).map(l=>l.b).join(' · '),880,32);ft(L.slice(3).map(l=>l.b).join(' · '),925,32);
   x.fillText('Puntaje: '+st.reduce((a,b)=>a+b,0)+'/15 estrellas',W/2,990);
   x.fillStyle='#4f2a55';x.font='bold 34px Georgia,serif';
   x.fillText('Crochet para Aprender · eldisyerar · '+new Date().toLocaleDateString('es'),W/2,1050);
